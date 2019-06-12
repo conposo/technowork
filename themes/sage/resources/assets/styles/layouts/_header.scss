@@ -3,5 +3,10 @@
 }
 
 .banner .nav a {
-  @extend .nav-link;
+  // @extend .nav-link;
 }
+
+nav li {
+  margin: 0 5px;
+}
+

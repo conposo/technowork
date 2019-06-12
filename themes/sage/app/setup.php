@@ -8,6 +8,48 @@ use Roots\Sage\Template\Blade;
 use Roots\Sage\Template\BladeProvider;
 
 /**
+ * Hide Archives on Front
+ */
+add_action( 'parse_query', function( $query ){
+    if( !is_admin() && is_archive() ) {
+        wp_redirect( home_url() );
+        exit;
+    }
+});
+
+/**
+ * Add ACF Options
+ */
+if( function_exists('acf_add_options_page') ) {
+	
+    acf_add_options_page(array(
+		'page_title' 	=> 'Theme General Settings',
+		'menu_title'	=> 'Theme Settings',
+		'menu_slug' 	=> 'theme-general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Theme Header Settings',
+		'menu_title'	=> 'Header',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Theme Footer Settings',
+		'menu_title'	=> 'Footer',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+
+    acf_add_options_sub_page(array(
+		'page_title' 	=> 'Theme CTAs Section Settings',
+		'menu_title'	=> 'CTAs Section',
+		'parent_slug'	=> 'theme-general-settings',
+	));	
+}
+
+/**
  * Theme assets
  */
 add_action('wp_enqueue_scripts', function () {
@@ -44,7 +86,8 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
     register_nav_menus([
-        'primary_navigation' => __('Primary Navigation', 'sage')
+        'primary_navigation' => __('Primary Navigation', 'sage'),
+        'primary_footer' => __('Primary Footer', 'sage'),
     ]);
 
     /**

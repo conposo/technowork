@@ -58,7 +58,7 @@ function thnw_custom_post_types() {
         'hierarchical'       => false,
         'menu_position'      => 10,
         'supports'           => array( 'title', 'editor', 'thumbnail' ),
-        'taxonomies'         => array( 'category' ),
+        'taxonomies'         => array( 'client_cat' ),
     );
     register_post_type( 'clients', $args );
 
@@ -93,12 +93,44 @@ function thnw_custom_post_types() {
         'hierarchical'       => false,
         'menu_position'      => 10,
         'supports'           => array( 'title', 'editor', 'thumbnail' ),
-        'taxonomies'         => array( 'category' ),
+        'taxonomies'         => array( 'project_cat' ),
     );
     register_post_type( 'projects', $args );
 
 }
 add_action( 'init', 'thnw_custom_post_types' );
+
+function create_custom_tax() {
+	register_taxonomy(
+		'project_cat',
+		['projects'],
+		array(
+			'label' => __( 'Categories', 'thnw' ),
+            'labels' => [
+                'name' => __( 'Categories', 'thnw' ),
+                'singular_name' => __( 'Category', 'thnw' ),
+                'add_new_item' => __( 'Add New Category', 'thnw' ),
+            ],
+			'rewrite' => array( 'slug' => 'project-cat' ),
+			'hierarchical' => false,
+		)
+    );
+    register_taxonomy(
+		'client_cat',
+		['clients'],
+		array(
+			'label' => __( 'Categories', 'thnw' ),
+            'labels' => [
+                'name' => __( 'Categories', 'thnw' ),
+                'singular_name' => __( 'Category', 'thnw' ),
+                'add_new_item' => __( 'Add New Category', 'thnw' ),
+            ],
+			'rewrite' => array( 'slug' => 'client-cat' ),
+			'hierarchical' => false,
+		)
+    );
+}
+add_action( 'init', 'create_custom_tax' );
 
 function my_rewrite_flush() {
     thnw_custom_post_types();
