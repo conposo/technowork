@@ -7,7 +7,7 @@ use Sober\Controller\Controller;
 class TemplateProjects extends Controller
 {
     public $taxonomy = 'project_cat';
-    use Partials\Terms;
+    use partials\terms;
     
     protected $acf = true;
 

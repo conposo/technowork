@@ -4,12 +4,10 @@ namespace App;
 
 use Roots\Sage\Container;
 
-function is_hero($class = 'container')
+function is_hero()
 {
     if( in_array(get_the_ID(), get_field('hero_pages', 'option')) ) :
-        echo $class;
-    else:
-        echo 'container';
+        return true;
     endif;
 }
 

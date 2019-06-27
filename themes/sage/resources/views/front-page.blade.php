@@ -4,7 +4,8 @@
 
   @include('partials.page-header')
 
-  <div class="container">
+  <div class="slide container">
+
     @if (!have_posts())
       <div class="alert alert-warning">
         {{ __('Sorry, no results were found.', 'sage') }}
@@ -19,6 +20,7 @@
     {!! get_the_posts_navigation() !!}
     
     @include('partials.content-front-page')
+
   </div>
 
 @endsection

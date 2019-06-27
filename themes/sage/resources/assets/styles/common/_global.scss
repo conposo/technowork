@@ -1,0 +1,125 @@
+
+* {
+  -webkit-transition: all .25s ease-in-out; /* Safari */
+  transition: all .25s ease-in-out;
+}
+
+body {
+  font-family: 'Fira Sans';
+}
+p {
+  font-weight: 400;
+  line-height: 30px;
+}
+.btn {
+  @extend .rounded-0;
+
+  font-weight: 500;
+  color: $brand-primary-color-light;
+  background-color: $brand-primary-color-white;
+  box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.1);
+}
+
+
+body > footer,
+body > header {
+  background-color: $background-primary-color-light;
+
+  span.brand,
+  a.brand {
+    width: 55px;
+    @include media-breakpoint-up(sm) {
+      // 
+    }
+    @include media-breakpoint-up(md) {
+      // 
+    }
+    @include media-breakpoint-up(lg) {
+      width: 85px;
+    }
+    @include media-breakpoint-up(xl) {
+      // 
+    }
+
+    img {
+      @extend .d-block;
+      @extend .w-100;
+    }
+  }
+
+  nav {
+    li {
+      @extend .mx-2;
+      @extend .mx-sm-4;
+
+      @include media-breakpoint-up(sm) {
+        // 
+      }
+    }
+
+    a {
+      color: #232F3E;
+      font-weight: 500;
+      font-size: 14px;
+      
+      @include media-breakpoint-up(sm) {
+        font-size: 16px;
+      }
+      @include media-breakpoint-up(md) {
+        // 
+      }
+      @include media-breakpoint-up(lg) {
+        width: 85px;
+      }
+      @include media-breakpoint-up(xl) {
+        // 
+      }
+    }
+  }
+}
+
+.btn {
+  &:hover {
+      color: currentColor;
+  }
+}
+.btn-deco {
+  -webkit-transition: all .1s ease-in-out; /* Safari */
+  transition: all .1s ease-in-out;
+
+  @extend .btn;
+  @extend .pl-3;
+  @extend .pr-4;
+
+  border: 1px solid rgba(2, 95, 186, 0.03);
+  
+  font-weight: 500;
+  color: $brand-primary-color-light;
+
+  text-align: left;
+  background-image: url('../images/arrow-right.svg');
+  background-repeat: no-repeat;
+  background-position: 90% center;
+  // bottom: 15px;
+  // left: 15px;
+
+  &:hover {
+    @extend .shadow-sm;
+
+    -webkit-transition: all .1s ease-in-out; /* Safari */
+    transition: all .1s ease-in-out;
+    transform: scale(0.98);
+    // font-size: 0.9rem;
+    // color: $brand-primary-color;
+    color: $brand-primary-color-light;
+  }
+}
+
+// .__text-right-center {
+//     @include media-breakpoint-down(xs) {
+//         text-align: center;
+//     }
+//     @include media-breakpoint-up(sm) {
+//         text-align: right;
+//     }
+// }

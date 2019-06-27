@@ -1,6 +1,6 @@
 
 <?php if( !is_front_page() ): ?>
-  <div class="page-header">
+  <div class="<?php if( App\is_hero() ): ?> my-5 <?php endif; ?> page-header text-center">
     <h1><?php echo App::title(); ?></h1>
   </div>
 <?php endif; ?>

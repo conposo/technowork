@@ -7,7 +7,7 @@ use Sober\Controller\Controller;
 class TemplateClients extends Controller
 {
     public $taxonomy = 'client_cat';
-    use Partials\Terms;
+    use partials\terms;    
 
     protected $acf = true;
 

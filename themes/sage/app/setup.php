@@ -47,14 +47,23 @@ if( function_exists('acf_add_options_page') ) {
 		'menu_title'	=> 'CTAs Section',
 		'parent_slug'	=> 'theme-general-settings',
 	));	
+
+    acf_add_options_sub_page(array(
+		'page_title' 	=> 'Home Page Settings',
+		'menu_title'	=> 'Home Page',
+		'parent_slug'	=> 'theme-general-settings',
+	));	
 }
 
 /**
  * Theme assets
  */
 add_action('wp_enqueue_scripts', function () {
+    wp_deregister_script('jquery');
+    wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js', array(), null, false);
+    wp_enqueue_script('jquery-ui', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js', array(), null, false);
     wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
-    wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
+    wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery', 'jquery-ui'], null, true);
 
     if (is_single() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
@@ -88,6 +97,7 @@ add_action('after_setup_theme', function () {
     register_nav_menus([
         'primary_navigation' => __('Primary Navigation', 'sage'),
         'primary_footer' => __('Primary Footer', 'sage'),
+        'primary_footer_secondary' => __('Primary Footer Secondary', 'sage'),
     ]);
 
     /**

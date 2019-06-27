@@ -1,0 +1,48 @@
+
+h1, h2, h3 {
+    font-weight: 600;
+    font-size: 40px;
+    letter-spacing: -1px;
+}
+
+h1 {
+    // 
+}
+
+h2 {
+    @extend .position-relative;
+    @extend .mb-4;
+    @extend .pb-4;
+    
+    &:after {
+        @extend .position-absolute;
+        bottom: 0;
+        content: '';
+        width: 111px;
+        height: 3px;
+        background-color: $brand-primary-color;
+    }
+
+    &:not(.text-left),
+    &:not(.text-right) {
+        &:after {
+            left: calc( 50% - 56px ) ;
+        }
+    }
+
+    &.text-left {
+        &:after {
+            left: 0;
+        }
+    }
+    &.text-right {
+        &:after {
+            left: auto;
+            right: 0;
+        }
+    }
+}
+
+h3 {
+    font-size: 20px;
+}

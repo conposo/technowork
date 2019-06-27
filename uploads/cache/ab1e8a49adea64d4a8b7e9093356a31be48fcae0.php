@@ -2,7 +2,8 @@
 
   <?php echo $__env->make('partials.page-header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
-  <div class="container">
+  <div class="slide container">
+
     <?php if(!have_posts()): ?>
       <div class="alert alert-warning">
         <?php echo e(__('Sorry, no results were found.', 'sage')); ?>
@@ -20,6 +21,7 @@
 
     
     <?php echo $__env->make('partials.content-front-page', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
   </div>
 
 <?php $__env->stopSection(); ?>

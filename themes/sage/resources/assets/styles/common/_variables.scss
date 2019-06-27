@@ -1,10 +1,23 @@
-/** Import Bootstrap functions */
-@import "~bootstrap/scss/functions";
+
+
+
+$box-shadow-sm: 0 .125rem .25rem rgba($black, .075);
+$box-shadow: 0 20px 80px #D2D9E7;
+$box-shadow-lg: 0 1rem 3rem rgba($black, .175);
 
 $theme-colors: (
   primary: #525ddc
 );
 
+$fira-sans: 'Fira Sans', 'sans-serif';
+
 /** Bootstrap navbar fix (https://git.io/fADqW) */
 $navbar-dark-toggler-icon-bg: none;
 $navbar-light-toggler-icon-bg: none;
+
+$brand-primary-color: #055FBA;
+$brand-primary-color-light: #5B96D2;
+$brand-primary-color-white: #FAFCFF;
+$background-primary-color-light: #F6F9FF;
+
+$brand-primary-font: $fira-sans;

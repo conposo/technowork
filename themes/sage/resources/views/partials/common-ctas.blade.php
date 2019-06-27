@@ -1,28 +1,35 @@
 
 @if( in_array(get_the_ID(), get_field('ctas_pages', 'option')) )
-  <div>
+
+  <div class="mb-5 pt-5">
+
     @if( have_rows('section', 'option') )
+
       @php $counter = 1; @endphp
 
-      <div class="border pt-3 mb-5 row d-flex align-items-center">
-        @while( have_rows('section', 'option') ) @php the_row(); @endphp
+      @while( have_rows('section', 'option') ) @php the_row(); @endphp
 
-          <div class="col-6">
-            <h2>{{get_sub_field('title')}}</h2>
+        <div class="row d-flex">
+          <div class="col-6 @if($counter == 2) ml-auto text-right @else  @endif">
+            <h2 class="@if($counter == 2) text-right @else text-left @endif">{{get_sub_field('title')}}</h2>
             <p>
               {{get_sub_field('text')}}
               @if( $cta = get_sub_field('cta') )
-              <a class="d-block" href="{{$cta}}">{{__('See more', 'thnw')}}</a>
+              <br>
+              <a class="mt-3 btn-deco btn-sm" href="{{$cta}}">{{__('Виж повече', 'thnw')}}</a>
               @endif
             </p>
           </div>
+        </div>
 
-          @php $counter++; @endphp
-        @endwhile
-      </div>
+        @php $counter++; @endphp
+
+      @endwhile
 
     @else
       // no rows found
     @endif
+
   </div>
+
 @endif
