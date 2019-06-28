@@ -20,7 +20,9 @@
     </h1>
   </div>
 
-  <a href="#services" class="scroll-down next-slide"><span class="bounce"></span></a>
+  <?php if( is_front_page() ): ?>
+    <a href="#services" class="scroll-down next-slide"><span class="bounce"></span></a>
+  <?php endif; ?>
 
 </div>
 

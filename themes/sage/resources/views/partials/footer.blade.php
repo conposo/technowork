@@ -1,29 +1,31 @@
 
 <div class="container">
   @if( $pages_footer_text = get_field('pages_footer_text') )
-    <div class="mb-5">{!!$pages_footer_text!!}</div>
+    <div class="mb-5 pb-5">{!!$pages_footer_text!!}</div>
   @endif
-  @include('partials.common-ctas')
+  @if( in_array(get_the_ID(), get_field('ctas_pages', 'option')) )
+    @include('partials.common-ctas')
+  @endif
 </div>
 
 @if( is_front_page() )
   @include('partials.clients')
 @endif
 
-<footer class="pt-4 pb-1 _border-top content-info d-flex flex-column align-items-center">
-  <div class="container d-flex justify-content-between align-items-center">
+<footer class="pt-4 pb-3 pb-sm-1 _border-top content-info d-flex flex-column">
+  <div class="container d-flex flex-column flex-sm-row justify-content-between align-items-center">
     @php dynamic_sidebar('sidebar-footer') @endphp
-    <div class="__w-25">
+    <div class="__w-25 mb-3 mb-sm-0 d-flex justify-content-center justify-content-sm-left">
       <span class="brand d-block">
         <img src="@asset('images/TechnoworkLogo.png')" alt="TechnoWork Official Logo">
       </span>
     </div>
-    <nav class="nav-footer">
+    <nav class="nav-footer mb-3 mb-sm-0">
       @if (has_nav_menu('primary_footer'))
         {!! wp_nav_menu(['theme_location' => 'primary_footer', 'menu_class' => 'nav']) !!}
       @endif
     </nav>
-    <div class="__w-25">
+    <div class="__w-25 mb-3 mb-sm-0">
       @if (has_nav_menu('primary_footer_secondary'))
         {!! wp_nav_menu(['theme_location' => 'primary_footer_secondary', 'menu_class' => 'nav d-flex justify-content-center d-flex justify-content-sm-end']) !!}
       @endif

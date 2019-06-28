@@ -2,44 +2,49 @@
 @if( $section )
 
     @while( have_rows('section') ) @php the_row(); @endphp
-        <div class="my-5 py-5 row d-flex align-items-center">
+        <div class="my-5 py-5 d-flex flex-column align-items-center">
 
             <div class="mb-5 col text-center">
-                <h2>{{get_sub_field('title')}}</h2>
-                <p>{{get_sub_field('text')}}</p>
-                <div>
-                @if( $_image = get_sub_field('image') )
-                    {!! wp_get_attachment_image( $_image, 'full', '', ['class' => 'w-100 h-auto'] ) !!}
+                @if(get_sub_field('title'))
+                    <h2>{{get_sub_field('title')}}</h2>
                 @endif
-                </div>
+                @if(get_sub_field('text'))
+                    <p>{{get_sub_field('text')}}</p>
+                @endif
+                @if( $_image = get_sub_field('image') )
+                    <div>
+                        {!! wp_get_attachment_image( $_image, 'full', '', ['class' => 'w-100 h-auto'] ) !!}
+                    </div>
+                @endif
             </div>
 
             @if( have_rows('machines') )
 
                 @while( have_rows('machines') ) @php the_row(); @endphp
-                <div class="border shadow pt-3 mb-5 row d-flex align-items-center">
+                <div class="pt-3 mb-5 row d-flex _align-items-center">
 
-                    <div class="col-7">
-                        <h2>{{get_sub_field('title')}}</h2>
-                        <p>
-                            {{get_sub_field('text')}}
-                            @if( $cta = get_sub_field('cta') )
-                                <br>
-                                <a class="mt-3 btn btn-sm btn-outline-info" href="{{get_field('page_projects', 'option')}}{{$cta['url']}}" {{$cta['target']}}>{{$cta['title']}}</a>
-                            @endif
-                        </p>
-                    </div>
-                    <figure class="col-5">
-                        @if( $_image = get_sub_field('image') )
-                        {!! wp_get_attachment_image( $_image, 'full', '', ['class' => 'border p-1 w-100 h-auto'] ) !!}
+                    @if( $_image = get_sub_field('image') )
+                        <figure class="col-sm-5">
+                            {!! wp_get_attachment_image( $_image, 'full', '', ['class' => 'rounded-lg shadow w-100 h-auto'] ) !!}
+                        </figure>
+                    @endif
+                    <div class="col-sm-7">
+                        @if(get_sub_field('title'))
+                            <h2 class="text-left">{{get_sub_field('title')}}</h2>
                         @endif
-                    </figure>
+                        @if(get_sub_field('text'))
+                            <p>{{get_sub_field('text')}}</p>
+                        @endif
+                        @if( $cta = get_sub_field('cta') )
+                            <a class="mt-3 selected btn btn-sm btn-deco" href="{{get_field('page_projects', 'option')}}{{$cta['url']}}" {{$cta['target']}}>{{$cta['title']}}</a>
+                        @endif
+                    </div>
                     
                 </div>
                 @endwhile
 
             @else
-                // no rows found
+                <!-- no rows found -->
             @endif
 
         </div>

@@ -10,8 +10,9 @@
     @include('partials.content-page')
   @endwhile
 
-  <div class="{{App\is_hero('container')}}">
-    @include('partials.content-for-us')
-  </div>
+  @include('partials.content-for-us')
+
+  <!-- <div class="{{App\is_hero('container')}}">
+  </div> -->
 
 @endsection

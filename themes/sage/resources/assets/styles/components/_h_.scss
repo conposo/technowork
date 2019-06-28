@@ -3,6 +3,7 @@ h1, h2, h3 {
     font-weight: 600;
     font-size: 40px;
     letter-spacing: -1px;
+    
 }
 
 h1 {
@@ -10,6 +11,7 @@ h1 {
 }
 
 h2 {
+
     @extend .position-relative;
     @extend .mb-4;
     @extend .pb-4;

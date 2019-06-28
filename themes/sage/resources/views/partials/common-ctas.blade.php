@@ -1,35 +1,31 @@
 
-@if( in_array(get_the_ID(), get_field('ctas_pages', 'option')) )
 
-  <div class="mb-5 pt-5">
+<div class="ctas mb-5 pt-5">
 
-    @if( have_rows('section', 'option') )
+  @if( have_rows('section', 'option') )
 
-      @php $counter = 1; @endphp
+    @php $counter = 1; @endphp
 
-      @while( have_rows('section', 'option') ) @php the_row(); @endphp
+    @while( have_rows('section', 'option') ) @php the_row(); @endphp
 
-        <div class="row d-flex">
-          <div class="col-6 @if($counter == 2) ml-auto text-right @else  @endif">
-            <h2 class="@if($counter == 2) text-right @else text-left @endif">{{get_sub_field('title')}}</h2>
-            <p>
-              {{get_sub_field('text')}}
-              @if( $cta = get_sub_field('cta') )
-              <br>
-              <a class="mt-3 btn-deco btn-sm" href="{{$cta}}">{{__('Виж повече', 'thnw')}}</a>
-              @endif
-            </p>
-          </div>
+      <div class="row d-flex">
+        <div class="col-sm-8 @if(!wp_is_mobile()) @if($counter == 2) ml-auto text-right @else  @endif @else mb-5 @endif">
+          <h2 class="@if(!wp_is_mobile()) @if($counter == 2) text-right @else text-left @endif @else text-left @endif">{{get_sub_field('title')}}</h2>
+          <p>
+            {!!get_sub_field('text')!!}
+          </p>
+          @if( $cta = get_sub_field('cta') )
+            <a class="mt-3 btn-deco btn-sm" href="{{$cta}}">{{__('Виж повече', 'thnw')}}</a>
+          @endif
         </div>
+      </div>
 
-        @php $counter++; @endphp
+      @php $counter++; @endphp
 
-      @endwhile
+    @endwhile
 
-    @else
-      // no rows found
-    @endif
+  @else
+    // no rows found
+  @endif
 
-  </div>
-
-@endif
+</div>

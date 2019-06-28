@@ -18,7 +18,9 @@
     </h1>
   </div>
 
-  <a href="#services" class="scroll-down next-slide"><span class="bounce"></span></a>
+  @if( is_front_page() )
+    <a href="#services" class="scroll-down next-slide"><span class="bounce"></span></a>
+  @endif
 
 </div>
 

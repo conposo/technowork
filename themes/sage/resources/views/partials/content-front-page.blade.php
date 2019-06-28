@@ -23,17 +23,19 @@
     @while( have_rows('services') ) @php the_row(); @endphp
 
         <div class="mb-5 col-12 col-sm-4 text-center">
-            <h3 class="d-sm-none">{!!get_sub_field('title')!!}</h3>
-            <div class="mb-3 rounded shadow">
-                @if( $_image = get_sub_field('image') )
-                    {!! wp_get_attachment_image( $_image, 'full', '', ['class' => 'w-100 h-auto'] ) !!}
-                @endif
-            </div>
-            <div class="position-relative">
-                @if( $cta = get_sub_field('cta') )
-                    <a class="btn-deco" href="{{get_field('page_services', 'option')}}/#{{$cta}}">{{__('Виж повече', 'thnw')}}</a>
-                @endif
-            </div>
+            @if( $cta = get_sub_field('cta') )
+            <a href="{{get_field('page_services', 'option')}}/#{{$cta}}">
+                <h3 class="d-sm-none">{!!get_sub_field('title')!!}</h3>
+                <div class="mb-3 rounded rounded-lg shadow">
+                    @if( $_image = get_sub_field('image') )
+                        {!! wp_get_attachment_image( $_image, 'full', '', ['class' => 'w-100 h-auto'] ) !!}
+                    @endif
+                </div>
+                <div class="position-relative">
+                        <a class="btn-deco" href="{{get_field('page_services', 'option')}}/#{{$cta}}">{{__('Виж повече', 'thnw')}}</a>
+                </div>
+            </a>
+            @endif
         </div>
 
         @php $counter++; @endphp

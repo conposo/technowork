@@ -1,9 +1,32 @@
 
 
+/* set the overriding variables */
+$grid-breakpoints: (
+  xxxs: 0,
+  xxs: 320px,
+  xs: 568px,
+  sm: 667px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1440px,
+  xxxl: 1600px
+);
 
-$box-shadow-sm: 0 .125rem .25rem rgba($black, .075);
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+);
+
+// $box-shadow-sm: 0 .125rem .25rem rgba($black, .075);
 $box-shadow: 0 20px 80px #D2D9E7;
-$box-shadow-lg: 0 1rem 3rem rgba($black, .175);
+// $box-shadow-lg: 0 1rem 3rem rgba($black, .175);
+
+$border-radius-lg: 9px;
+
+$link-hover-decoration: none;
 
 $theme-colors: (
   primary: #525ddc
@@ -19,5 +42,7 @@ $brand-primary-color: #055FBA;
 $brand-primary-color-light: #5B96D2;
 $brand-primary-color-white: #FAFCFF;
 $background-primary-color-light: #F6F9FF;
+
+$color-dark: #232F3E;
 
 $brand-primary-font: $fira-sans;

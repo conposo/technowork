@@ -4,9 +4,10 @@
     <?php echo $__env->make('partials.content-page', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
   <?php endwhile; ?>
 
-  <div class="<?php echo e(App\is_hero('container')); ?>">
-    <?php echo $__env->make('partials.content-for-us', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-  </div>
+  <?php echo $__env->make('partials.content-for-us', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+  <!-- <div class="<?php echo e(App\is_hero('container')); ?>">
+  </div> -->
 
 <?php $__env->stopSection(); ?>
 

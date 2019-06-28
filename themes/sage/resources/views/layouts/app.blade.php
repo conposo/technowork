@@ -4,7 +4,7 @@
   <body @php body_class() @endphp>
     @php do_action('get_header') @endphp
     @include('partials.header')
-    <div class="wrap @if(App\is_hero()) container-fluid p-0 @endif" role="document">
+    <div class="wrap position-relative @if(App\is_hero()) container-fluid p-0 @endif" role="document">
       <div class="content">
         <main class="main">
           @yield('content')
