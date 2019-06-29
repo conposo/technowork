@@ -1,30 +1,33 @@
 
 <div class="mt-5 py-5 container">
-  <div class="mb-5 row">
-    <div class="col-4">
+
+  <div class="mb-sm-5 row">
+    <div class="col-sm-4 mb-5">
       <h2 class="text-left text-uppercase font-weight-light">{{$title_phone}}</h2>
-      <div class="mb-3 h-75 d-flex align-items-center pt-2 mx-auto _shadow">
+      <div class="mb-3 h-75 d-flex align-items-center pt-sm-2 mx-auto _shadow">
         <div class="d-flex justify-content-center flex-column">
           <h3>{{$contact_person}}</h3>
           <p class="card-text">
             <a href="{{$gps_coords->gps_coords_cta}}">{{$phone}}</a>
           </p>
+          <p class="m-0 pl-0 pr-5 btn-sm font-weight-light">{{$description_phone}}</p>
         </div>
       </div>
     </div>
-    <div class="col-4">
+    <div class="col-sm-4 mb-5">
       <h2 class="text-left text-uppercase font-weight-light">{{$title_email}}</h2>
-      <div class="mb-3 h-75 d-flex align-items-center pt-2 mx-auto _shadow">
+      <div class="mb-3 h-75 d-flex align-items-center pt-sm-2 mx-auto _shadow">
         <div class="d-flex justify-content-center flex-column">
           <p class="card-text">
             <a href="{{$gps_coords->gps_coords_cta}}">{{$email}}</a>
           </p>
+          <p class="m-0 pl-0 pr-5 btn-sm font-weight-light">{{$description_email}}</p>
         </div>
       </div>
     </div>
-    <div class="col-4">
+    <div class="col-sm-4 mb-5">
       <h2 class="text-left text-uppercase font-weight-light">{{$title_place}}</h2>
-      <div class="mb-3 h-75 d-flex align-items-center pt-2 mx-auto _shadow">
+      <div class="mb-3 h-75 d-flex align-items-center pt-sm-2 mx-auto _shadow">
         <div class="d-flex justify-content-center flex-column">
           <p class="card-text">
             {{$label_address}}
@@ -37,20 +40,9 @@
               <a href="{{$gps_coords->gps_coords_cta}}" class="see-on-map">виж в Google Maps</a>
             </div>
           @endif
+          <p class="m-0 pl-0 pr-5 btn-sm font-weight-light">{{$description_place}}</p>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="mb-5 pb-5 row">
-    <div class="col-4">
-      <p class="m-0 pl-0 pr-5 btn-sm font-weight-light">{{$description_phone}}</p>
-    </div>
-    <div class="col-4">
-      <p class="m-0 pl-0 pr-5 btn-sm font-weight-light">{{$description_email}}</p>
-    </div>
-    <div class="col-4">
-      <p class="m-0 pl-0 pr-5 btn-sm font-weight-light">{{$description_place}}</p>
     </div>
   </div>
   

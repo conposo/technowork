@@ -1,7 +1,7 @@
 
 <div class="container">
 
-    <section class="my-5 py-5 text-center">
+    <section class="my-3 my-sm-5 py-3 my-sm-5 text-center">
         <figure class="mb-5">
         @if( $services_image )
             {!! wp_get_attachment_image( $services_image, 'full', '', ['class' => 'rounded-lg shadow w-100 h-auto'] ) !!}
@@ -20,14 +20,14 @@
     @php $counter = 1; @endphp
 
     @while( have_rows('services') ) @php the_row(); @endphp
-        <div id="{{get_sub_field('anchor')}}" class="pt-1 pb-3 mb-5 row d-flex _align-items-center">
+        <div id="{{get_sub_field('anchor')}}" class="pt-1 pb-3 mb-5 row d-flex flex-column-reverse flex-sm-row _align-items-center">
 
-            <div class="mr-auto col-5">
+            <div class="mr-auto col-sm-5">
                 @if( $_image = get_sub_field('image') )
                     {!! wp_get_attachment_image( $_image, 'full', '', ['class' => 'rounded-lg shadow w-100 h-auto'] ) !!}
                 @endif
             </div>
-            <div class="ml-auto col-7">
+            <div class="ml-auto col-sm-7">
                 <h2 class="text-left">{{get_sub_field('title')}}</h2>
                 <p>{{get_sub_field('text')}}</p>
             </div>

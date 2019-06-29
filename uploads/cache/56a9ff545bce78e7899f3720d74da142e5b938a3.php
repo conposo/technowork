@@ -1,4 +1,4 @@
-<header class="border-0 <?php if( ! App\is_hero() ): ?> mb-5 <?php endif; ?> py-4 border-bottom banner">
+<header class="<?php if( ! App\is_hero() ): ?> mb-5 <?php endif; ?> py-4 banner">
   <div class="container d-flex _flex-column _flex-sm-row justify-content-between align-items-center">
     <a class="brand" href="<?php echo e(home_url('/')); ?>">
       <img src="<?= App\asset_path('images/TechnoworkLogoSolid.png'); ?>" alt="TechnoWork Official Logo">

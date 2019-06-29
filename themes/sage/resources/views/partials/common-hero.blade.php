@@ -1,6 +1,4 @@
 
-@if( in_array(get_the_ID(), get_field('hero_pages', 'option')) )
-
 <div class="position-relative hero slide">
 
   <figure class="mb-0">
@@ -12,9 +10,9 @@
   <div class="pl-0 container">
     <h1>
       {!!get_field('hero_heading', 'option')!!}
-      <a href="#" class="btn-deco mt-5">
-        Виж повече
-      </a>
+      @if( is_front_page() )
+        <a href="{{get_field('page_services', 'option')}}" class="btn-deco mt-5">{{__('Виж повече', 'thnw')}}</a>
+      @endif
     </h1>
   </div>
 
@@ -23,5 +21,3 @@
   @endif
 
 </div>
-
-@endif

@@ -9,3 +9,9 @@
 nav li {
   margin: 0 5px;
 }
+
+body > header {
+  @include media-breakpoint-down(xs) {
+    border-top: 5px solid $brand-primary-color;
+  }
+}

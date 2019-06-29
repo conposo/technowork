@@ -2,6 +2,11 @@
 body > footer {
     color: #8B9FB8;
 
+    > div {
+        @extend .position-relative;
+        z-index: 9;
+    }
+
     .nav,
     nav {
         a {

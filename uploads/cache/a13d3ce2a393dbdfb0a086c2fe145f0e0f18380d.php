@@ -7,7 +7,7 @@
       <?php echo $__env->make('partials.content-page', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <?php endwhile; ?>
 
-    <?php echo $__env->make('partials.component-clients-projects', ['post_type' => 'clients', 'post_term' => 'client_cat'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('partials.component-clients-projects', ['post_type' => 'clients', 'post_term' => 'client_cat', 'shadow' => false], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     
   </div>
 

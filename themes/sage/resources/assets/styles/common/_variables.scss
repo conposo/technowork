@@ -10,7 +10,7 @@ $grid-breakpoints: (
   lg: 992px,
   xl: 1200px,
   xxl: 1440px,
-  xxxl: 1600px
+  xxxl: 1920px
 );
 
 $container-max-widths: (
@@ -19,6 +19,9 @@ $container-max-widths: (
   lg: 960px,
   xl: 1140px
 );
+
+$btn-focus-width: 0;
+$btn-focus-box-shadow: none;
 
 // $box-shadow-sm: 0 .125rem .25rem rgba($black, .075);
 $box-shadow: 0 20px 80px #D2D9E7;

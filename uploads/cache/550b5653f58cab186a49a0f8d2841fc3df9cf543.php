@@ -1,6 +1,4 @@
 
-<?php if( in_array(get_the_ID(), get_field('hero_pages', 'option')) ): ?>
-
 <div class="position-relative hero slide">
 
   <figure class="mb-0">
@@ -14,9 +12,9 @@
     <h1>
       <?php echo get_field('hero_heading', 'option'); ?>
 
-      <a href="#" class="btn-deco mt-5">
-        Виж повече
-      </a>
+      <?php if( is_front_page() ): ?>
+        <a href="<?php echo e(get_field('page_services', 'option')); ?>" class="btn-deco mt-5"><?php echo e(__('Виж повече', 'thnw')); ?></a>
+      <?php endif; ?>
     </h1>
   </div>
 
@@ -25,5 +23,3 @@
   <?php endif; ?>
 
 </div>
-
-<?php endif; ?>

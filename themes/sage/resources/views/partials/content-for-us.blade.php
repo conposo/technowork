@@ -1,9 +1,5 @@
 
-<div class="container">
-
-  <p class="m-sm-5 p-sm-5 text-center">
-  {{$intro}}
-  </p>
+<div class="pt-3 pt-lg-5 container">
 
   @if( have_rows('presentation') )
       @php $counter = 1; @endphp
@@ -11,7 +7,7 @@
     @while ( have_rows('presentation') ) @php the_row(); @endphp
       <div class="my-3 my-sm-5 py-3 py-sm-5 row d-flex _align-items-center @if($counter == 2) flex-row-reverse @endif">
 
-        <div class="col-sm-4 mb-3 m-sm-0">
+        <div class="col-lg-5 col-xl-4 mb-3 mb-sm-5 mb-lg-0">
           <div>
             @if( $_image = get_sub_field('image') )
               {!! wp_get_attachment_image( $_image, 'full', '', ['class' => 'shadow rounded-lg w-100 h-auto'] ) !!}
@@ -19,7 +15,7 @@
           </div>
         </div>
 
-        <div class="col-sm-7 @if($counter == 2) mr-auto pr-sm-5 @else ml-auto @endif">
+        <div class="col-lg-7 @if($counter == 2) mr-auto pr-sm-5 @else ml-auto @endif">
           <div class="@if($counter == 2) @else mr-sm-5 @endif">
             {!!get_sub_field('text')!!}
           </div>

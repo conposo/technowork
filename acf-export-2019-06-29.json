@@ -70,7 +70,7 @@
                         "key": "field_5d01056dba4dd",
                         "label": "Text",
                         "name": "text",
-                        "type": "text",
+                        "type": "textarea",
                         "instructions": "",
                         "required": 0,
                         "conditional_logic": 0,
@@ -81,9 +81,9 @@
                         },
                         "default_value": "",
                         "placeholder": "",
-                        "prepend": "",
-                        "append": "",
-                        "maxlength": ""
+                        "maxlength": "",
+                        "rows": "",
+                        "new_lines": ""
                     },
                     {
                         "key": "field_5d010574ba4de",
@@ -145,7 +145,7 @@
                 "collapsed": "",
                 "min": 0,
                 "max": 0,
-                "layout": "table",
+                "layout": "block",
                 "button_label": "Add Section",
                 "sub_fields": [
                     {
@@ -400,6 +400,44 @@
         "key": "group_5cfe717326bc6",
         "title": "Home page",
         "fields": [
+            {
+                "key": "field_5d14d1843763c",
+                "label": "Services Title",
+                "name": "services_title",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5d14d18e3763d",
+                "label": "Services Short Description",
+                "name": "services_short_description",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "maxlength": "",
+                "rows": "",
+                "new_lines": ""
+            },
             {
                 "key": "field_5cfe7186753ce",
                 "label": "Services",
@@ -857,7 +895,7 @@
                 "key": "field_5cfe7a0266ed7",
                 "label": "Text",
                 "name": "text_see_more",
-                "type": "text",
+                "type": "wysiwyg",
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -867,10 +905,10 @@
                     "id": ""
                 },
                 "default_value": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": "",
-                "maxlength": ""
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
             },
             {
                 "key": "field_5cfe7a1c66ed8",
@@ -1008,7 +1046,7 @@
                         "key": "field_5cfe76d7eacfc",
                         "label": "Text",
                         "name": "text",
-                        "type": "text",
+                        "type": "wysiwyg",
                         "instructions": "",
                         "required": 0,
                         "conditional_logic": 0,
@@ -1018,10 +1056,10 @@
                             "id": ""
                         },
                         "default_value": "",
-                        "placeholder": "",
-                        "prepend": "",
-                        "append": "",
-                        "maxlength": ""
+                        "tabs": "all",
+                        "toolbar": "full",
+                        "media_upload": 1,
+                        "delay": 0
                     }
                 ]
             },
@@ -1123,6 +1161,113 @@
         "description": ""
     },
     {
+        "key": "group_5d02277b1d850",
+        "title": "Pages",
+        "fields": [
+            {
+                "key": "field_5d02278079a9c",
+                "label": "Services",
+                "name": "page_services",
+                "type": "page_link",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [
+                    "page"
+                ],
+                "taxonomy": "",
+                "allow_null": 0,
+                "allow_archives": 0,
+                "multiple": 0
+            },
+            {
+                "key": "field_5d0227b979a9d",
+                "label": "Equipment",
+                "name": "page_equipment",
+                "type": "page_link",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [
+                    "page"
+                ],
+                "taxonomy": "",
+                "allow_null": 0,
+                "allow_archives": 0,
+                "multiple": 0
+            },
+            {
+                "key": "field_5d02283556b1c",
+                "label": "Projects",
+                "name": "page_projects",
+                "type": "page_link",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [
+                    "page"
+                ],
+                "taxonomy": "",
+                "allow_null": 0,
+                "allow_archives": 0,
+                "multiple": 0
+            },
+            {
+                "key": "field_5d02564e9be0e",
+                "label": "Clients",
+                "name": "page_clients",
+                "type": "page_link",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [
+                    "page"
+                ],
+                "taxonomy": "",
+                "allow_null": 0,
+                "allow_archives": 0,
+                "multiple": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "theme-general-settings"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
         "key": "group_5d00a0281c1dd",
         "title": "Services (page)",
         "fields": [
@@ -1208,6 +1353,25 @@
                 "button_label": "",
                 "sub_fields": [
                     {
+                        "key": "field_5d020875583b5",
+                        "label": "Anchor",
+                        "name": "anchor",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
                         "key": "field_5d00a0aad267f",
                         "label": "Title",
                         "name": "title",
@@ -1282,6 +1446,62 @@
             ]
         ],
         "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_5d0246e3a0c13",
+        "title": "Pages Footer",
+        "fields": [
+            {
+                "key": "field_5d024703c1435",
+                "label": "Text",
+                "name": "pages_footer_text",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "views\/template-projects.blade.php"
+                }
+            ],
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "views\/template-equipment.blade.php"
+                }
+            ],
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "views\/template-clients.blade.php"
+                }
+            ]
+        ],
+        "menu_order": 9,
         "position": "normal",
         "style": "default",
         "label_placement": "top",

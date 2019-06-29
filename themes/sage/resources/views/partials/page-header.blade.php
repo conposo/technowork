@@ -5,4 +5,6 @@
   </div>
 @endif
 
-@include('partials.common-hero')
+@if( in_array(get_the_ID(), get_field('hero_pages', 'option')) )
+  @include('partials.common-hero')
+@endif

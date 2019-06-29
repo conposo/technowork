@@ -2,11 +2,11 @@
 @if( $section )
 
     @while( have_rows('section') ) @php the_row(); @endphp
-        <div class="my-5 py-5 d-flex flex-column align-items-center">
+        <div class="bg-white my-5 my-sm-5 py-sm-5 d-flex flex-column align-items-center">
 
-            <div class="mb-5 col text-center">
+            <div class="mb-3 mb-sm-5 col text-center">
                 @if(get_sub_field('title'))
-                    <h2>{{get_sub_field('title')}}</h2>
+                    <h2 class="font-weight-normal">{{get_sub_field('title')}}</h2>
                 @endif
                 @if(get_sub_field('text'))
                     <p>{{get_sub_field('text')}}</p>
@@ -30,7 +30,7 @@
                     @endif
                     <div class="col-sm-7">
                         @if(get_sub_field('title'))
-                            <h2 class="text-left">{{get_sub_field('title')}}</h2>
+                            <h3 class="text-left">{{get_sub_field('title')}}</h3>
                         @endif
                         @if(get_sub_field('text'))
                             <p>{{get_sub_field('text')}}</p>

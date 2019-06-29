@@ -1,7 +1,6 @@
 
 // HOME
 .home {
-
   .slide + .slide {
     div.rounded {
       // position: relative;
@@ -28,7 +27,7 @@
         line-height: 1.8rem;
         letter-spacing: 0;
         font-weight: 500;
-        text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
+        // text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
 
         // &:after {
         //   content: '';
@@ -70,13 +69,11 @@
       }
     }
   }
-
   h4 {
     font-weight: 300;
     font-style: italic;
     letter-spacing: -1px;
   }
-  
   .carousel {
     @extend .pb-5;
     @extend .pt-3;
@@ -88,77 +85,15 @@
       }
     }
   }
-
-  .bounce {
-      position: absolute;
-      bottom: 0;
-
-      -moz-animation: bounce 3s infinite;
-      -webkit-animation: bounce 3s infinite;
-      animation: bounce 3s infinite;
-  }
-  @-moz-keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-      -moz-transform: translateY(0);
-      transform: translateY(0);
-    }
-    40% {
-      -moz-transform: translateY(-30px);
-      transform: translateY(-30px);
-    }
-    60% {
-      -moz-transform: translateY(-15px);
-      transform: translateY(-15px);
-    }
-  }
-  @-webkit-keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-    }
-    40% {
-      -webkit-transform: translateY(-30px);
-      transform: translateY(-30px);
-    }
-    60% {
-      -webkit-transform: translateY(-15px);
-      transform: translateY(-15px);
-    }
-  }
-  @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-      -moz-transform: translateY(0);
-      -ms-transform: translateY(0);
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-    }
-    40% {
-      -moz-transform: translateY(-30px);
-      -ms-transform: translateY(-30px);
-      -webkit-transform: translateY(-30px);
-      transform: translateY(-30px);
-    }
-    60% {
-      -moz-transform: translateY(-15px);
-      -ms-transform: translateY(-15px);
-      -webkit-transform: translateY(-15px);
-      transform: translateY(-15px);
-    }
-  }
 }
-
 
 // CONTACTS
 .template-contacts {
-  .after-header-deco {
-    height: 350px;
-    @include media-breakpoint-down(xs) {
+  h2 {
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 10px !important;
+      padding-bottom: 10px !important;
     }
-  }
-
-  main > p {
-    text-align: center;
-    font-weight: 300;
   }
   p {
     font-size: 18px;
@@ -171,25 +106,31 @@
     background-size: contain;
     background-repeat: no-repeat;
   }
+
+  // .row > div + div {
+  //   @include media-breakpoint-down(sm) {
+  //     padding: 3rem 0;
+  //     background-color: $background-primary-color-light;
+  //   }
+  // }
 }
 
 // ABOUT FOR US
 .template-for-us {
-  .after-header-deco {
-    @include media-breakpoint-down(xs) {
-      height: 400px;
-      background-color: #f6f9ff;
-    }
-  }
-
   .certificate {
     position: relative;
 
-    &:before {
-      -webkit-transition: all .1s ease-in-out; /* Safari */
-      transition: all .1s ease-in-out;
+    @include media-breakpoint-up(lg) {
+      &:before,
+      &:after {
+        content: '';
+      }
+    }
 
-      content: '';
+    &:before {
+      -webkit-transition: all 10s ease-in-out; /* Safari */
+      transition: all 10s ease-in-out;
+
       position: absolute;
       left: -50%;
       right: -150%;
@@ -208,8 +149,8 @@
     }
 
     &:hover {
-      -webkit-transition: all .1s ease-in-out; /* Safari */
-      transition: all .1s ease-in-out;
+      -webkit-transition: all 10s ease-in-out; /* Safari */
+      transition: all 10s ease-in-out;
 
       &:before {
         // background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(13, 53, 92, 0.1) 50%);
@@ -224,10 +165,13 @@
 
 }
 
-
 // SERVICES
 .template-services {
-
+  .after-header-deco {
+    @include media-breakpoint-up(xxxl) {
+      height: 650px;
+    }
+  }
   figure {
     position: relative;
     border-radius: 9px;
@@ -245,57 +189,51 @@
       background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(13, 53, 92, 0.43) 67.71%);
     }
   }
-
   h2 {
     font-size: 34px;
     font-weight: 400;
   }
-
 }
-
 
 // EQUIPMENT
 .template-equipment {
-  .after-header-deco {
-    @include media-breakpoint-down(xs) {
-      height: 400px;
-      background-color: #f6f9ff;
-    }
-    @include media-breakpoint-up(sm) {
-      height: 360px;
-    }
-    @include media-breakpoint-up(md) {
-    }
-    @include media-breakpoint-up(lg) {
-    }
-    @include media-breakpoint-up(xl) {
-    }
-  }
 }
 
 // PROJECTS
+.template-projects {
+  @include media-breakpoint-up(xxxl) {
+    height: 550px;
+  }
+}
 
 
 // CLIENTS
 .template-clients {
-  .after-header-deco {
-    @include media-breakpoint-down(xs) {
-      height: 400px;
-      background-color: #f6f9ff;
-    }
-    @include media-breakpoint-up(sm) {
-      height: 360px;
-    }
-    @include media-breakpoint-up(md) {
-    }
-    @include media-breakpoint-up(lg) {
-    }
-    @include media-breakpoint-up(xl) {
-    }
-  }
-  
+  // 
+}
+
+// PROJECTS
+// CLIENTS
+.template-projects,
+.template-clients {
   .tabs {
+
+    &.sticky-collapse {
+      @include media-breakpoint-down(sm) {
+        margin: 0 -10px 0 -15px;
+      }
+
+      ul {
+        // animation: sticky-collapse 1s 1;
+      }
+    }
+    
     @extend .position-relative;
+    @media (max-width: 575.98px) {
+      position: sticky;
+    }
+    
+    top: 0;
     z-index: 9;
 
     &:before {
@@ -306,7 +244,7 @@
       bottom: 0;
       width: 70%;
       height: 30px;
-      box-shadow: 0px 20px 80px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 0 80px rgba(0, 0, 0, 0.1);
     }
     &:after {
       content: '';
@@ -323,7 +261,73 @@
     ul {
       @extend .position-relative;
       z-index: 9;
+
+      li {
+        @extend .mx-5;
+        @include media-breakpoint-down(xs) {
+          margin: 0 10px !important;
+        }
+        @include media-breakpoint-down(xs) {
+          // @extend .mx-5;
+        }
+
+        a {
+          @extend .px-0;
+          @extend .pb-1;
+          @extend .text-uppercase;
+          color: rgba(35, 47, 62, 0.16);
+          border-bottom: 3px solid transparent !important;
+          
+          &.active {
+            color: #232F3E;
+            border-bottom: 3px solid #055FBA !important;
+          }
+        }
+      }
     }
   }
 }
 
+// FOR US
+// CONTACTS
+// EQUIPMENT
+// PROJECTS
+// CLIENTS
+.template-for-us,
+.template-contacts,
+.template-equipment,
+.template-projects,
+.template-clients {
+  .after-header-deco {
+    @include media-breakpoint-down(xs) {
+      background-color: #f6f9ff;
+    }
+    @include media-breakpoint-up(sm) {
+    }
+    @include media-breakpoint-up(md) {
+    }
+    @include media-breakpoint-up(lg) {
+    }
+    @include media-breakpoint-up(xl) {
+    }
+    @include media-breakpoint-up(xxl) {
+    }
+  }
+}
+
+// FOR US
+// CONTACTS
+.template-for-us,
+.template-contacts {
+  @include media-breakpoint-up(xxxl) {
+  }
+}
+
+// EQUIPMENT
+// CLIENTS
+.template-for-us,
+.template-contacts {
+  @include media-breakpoint-up(xxxl) {
+    height: 550px;
+  }
+}

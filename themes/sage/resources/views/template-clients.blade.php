@@ -13,7 +13,7 @@
       @include('partials.content-page')
     @endwhile
 
-    @include('partials.component-clients-projects', ['post_type' => 'clients', 'post_term' => 'client_cat'])
+    @include('partials.component-clients-projects', ['post_type' => 'clients', 'post_term' => 'client_cat', 'shadow' => false])
     
   </div>
 

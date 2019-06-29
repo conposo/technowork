@@ -1,4 +1,4 @@
-<header class="border-0 @if( ! App\is_hero() ) mb-5 @endif py-4 border-bottom banner">
+<header class="@if( ! App\is_hero() ) mb-5 @endif py-4 banner">
   <div class="container d-flex _flex-column _flex-sm-row justify-content-between align-items-center">
     <a class="brand" href="{{ home_url('/') }}">
       <img src="@asset('images/TechnoworkLogoSolid.png')" alt="TechnoWork Official Logo">

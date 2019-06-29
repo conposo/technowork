@@ -2,11 +2,11 @@
 <?php if( $section ): ?>
 
     <?php while( have_rows('section') ): ?> <?php the_row(); ?>
-        <div class="my-5 py-5 d-flex flex-column align-items-center">
+        <div class="bg-white my-5 my-sm-5 py-sm-5 d-flex flex-column align-items-center">
 
-            <div class="mb-5 col text-center">
+            <div class="mb-3 mb-sm-5 col text-center">
                 <?php if(get_sub_field('title')): ?>
-                    <h2><?php echo e(get_sub_field('title')); ?></h2>
+                    <h2 class="font-weight-normal"><?php echo e(get_sub_field('title')); ?></h2>
                 <?php endif; ?>
                 <?php if(get_sub_field('text')): ?>
                     <p><?php echo e(get_sub_field('text')); ?></p>
@@ -32,7 +32,7 @@
                     <?php endif; ?>
                     <div class="col-sm-7">
                         <?php if(get_sub_field('title')): ?>
-                            <h2 class="text-left"><?php echo e(get_sub_field('title')); ?></h2>
+                            <h3 class="text-left"><?php echo e(get_sub_field('title')); ?></h3>
                         <?php endif; ?>
                         <?php if(get_sub_field('text')): ?>
                             <p><?php echo e(get_sub_field('text')); ?></p>

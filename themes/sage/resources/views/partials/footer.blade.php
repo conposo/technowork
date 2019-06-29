@@ -13,9 +13,9 @@
 @endif
 
 <footer class="pt-4 pb-3 pb-sm-1 _border-top content-info d-flex flex-column">
-  <div class="container d-flex flex-column flex-sm-row justify-content-between align-items-center">
+  <div class="position-relative container d-flex flex-column flex-sm-row justify-content-between align-items-center">
     @php dynamic_sidebar('sidebar-footer') @endphp
-    <div class="__w-25 mb-3 mb-sm-0 d-flex justify-content-center justify-content-sm-left">
+    <div class="__w-25 mb-3 mb-sm-0 d-flex justify-content-center justify-content-sm-start">
       <span class="brand d-block">
         <img src="@asset('images/TechnoworkLogo.png')" alt="TechnoWork Official Logo">
       </span>

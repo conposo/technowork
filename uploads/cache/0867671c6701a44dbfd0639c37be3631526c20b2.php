@@ -5,4 +5,6 @@
   </div>
 <?php endif; ?>
 
-<?php echo $__env->make('partials.common-hero', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php if( in_array(get_the_ID(), get_field('hero_pages', 'option')) ): ?>
+  <?php echo $__env->make('partials.common-hero', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php endif; ?>
