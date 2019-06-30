@@ -1,8 +1,8 @@
 
 <?php if( $section ): ?>
-
+    <div class="equipment-margin"></div>
     <?php while( have_rows('section') ): ?> <?php the_row(); ?>
-        <div class="bg-white my-5 my-sm-5 py-sm-5 d-flex flex-column align-items-center">
+        <div class="bg-white my-4 my-lg-5 py-lg-5 d-flex flex-column align-items-center">
 
             <div class="mb-3 mb-sm-5 col text-center">
                 <?php if(get_sub_field('title')): ?>
@@ -25,8 +25,8 @@
                 <div class="pt-3 mb-5 row d-flex _align-items-center">
 
                     <?php if( $_image = get_sub_field('image') ): ?>
-                        <figure class="col-sm-5">
-                            <?php echo wp_get_attachment_image( $_image, 'full', '', ['class' => 'rounded-lg shadow w-100 h-auto'] ); ?>
+                        <figure class="m-0 col-sm-5">
+                            <?php echo wp_get_attachment_image( $_image, 'full', '', ['class' => 'service-image rounded-lg shadow w-100 h-auto'] ); ?>
 
                         </figure>
                     <?php endif; ?>

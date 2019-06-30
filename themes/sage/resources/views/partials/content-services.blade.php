@@ -2,7 +2,7 @@
 <div class="container">
 
     <section class="my-3 my-sm-5 py-3 my-sm-5 text-center">
-        <figure class="mb-5">
+        <figure class="mb-4 mb-lg-5">
         @if( $services_image )
             {!! wp_get_attachment_image( $services_image, 'full', '', ['class' => 'rounded-lg shadow w-100 h-auto'] ) !!}
         @endif
@@ -11,7 +11,7 @@
         <h2 class="">{{$services_header}}</h2>
         @endif
         @if( $services_intro )
-        <p class="mx-5 px-5">{{$services_intro}}</p>
+        <p class="mx-lg-5 px-3 px-lg-5">{{$services_intro}}</p>
         @endif
     </section>
 
@@ -24,12 +24,18 @@
 
             <div class="mr-auto col-sm-5">
                 @if( $_image = get_sub_field('image') )
-                    {!! wp_get_attachment_image( $_image, 'full', '', ['class' => 'rounded-lg shadow w-100 h-auto'] ) !!}
+                    {!! wp_get_attachment_image( $_image, 'full', '', ['class' => 'service-image rounded-lg shadow w-100 h-auto'] ) !!}
+                @endif
+                @if( App::detect()->isMobile() && !App::detect()->isTablet() && $cta = get_sub_field('link') )
+                    <a class="mt-3 btn-deco btn-sm" href="{{$cta}}">{{__('Виж повече', 'thnw')}}</a>
                 @endif
             </div>
             <div class="ml-auto col-sm-7">
-                <h2 class="text-left">{{get_sub_field('title')}}</h2>
-                <p>{{get_sub_field('text')}}</p>
+                <h2 class="text-left">{!!get_sub_field('title')!!}</h2>
+                <p>{!!get_sub_field('text')!!}</p>
+                @if( (!wp_is_mobile() || App::detect()->isTablet()) && $cta = get_sub_field('link') )
+                    <a class="mt-3 btn-deco btn-sm" href="{{$cta}}">{{__('Виж повече', 'thnw')}}</a>
+                @endif
             </div>
 
             @php $counter++; @endphp

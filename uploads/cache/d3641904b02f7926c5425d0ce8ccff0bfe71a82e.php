@@ -2,6 +2,13 @@
 <html <?php echo get_language_attributes(); ?>>
   <?php echo $__env->make('partials.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
   <body <?php body_class() ?>>
+
+    <div class="loading">
+      <span class="pulse">
+        <img src="<?= App\asset_path('/images/large_gears.gif'); ?>">
+      </span>
+    </div>
+
     <div class="bg-white w-100 position-fixed" style="top:0;bottom:0;z-index: -1;"></div>
     <?php do_action('get_header') ?>
     <?php echo $__env->make('partials.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
@@ -20,12 +27,6 @@
     <?php do_action('get_footer') ?>
     <?php echo $__env->make('partials.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <?php wp_footer() ?>
-    
-    <div class="loading">
-      <span class="pulse">
-        <img src="<?= App\asset_path('/images/technowork-logo.png'); ?>" alt="">
-      </span>
-    </div>
 
   </body>
 </html>

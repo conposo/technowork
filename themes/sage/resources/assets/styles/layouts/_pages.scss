@@ -89,6 +89,17 @@
 
 // CONTACTS
 .template-contacts {
+  .after-header-deco {
+    @include media-breakpoint-down(md) {
+      height: 325px;
+    }
+    @include media-breakpoint-only(md) {
+      height: 290px;
+    }
+    @include media-breakpoint-up(lg) {
+      height: 390px;
+    }
+  }
   h2 {
     @include media-breakpoint-down(sm) {
       margin-bottom: 10px !important;
@@ -106,17 +117,18 @@
     background-size: contain;
     background-repeat: no-repeat;
   }
-
-  // .row > div + div {
-  //   @include media-breakpoint-down(sm) {
-  //     padding: 3rem 0;
-  //     background-color: $background-primary-color-light;
-  //   }
-  // }
 }
 
 // ABOUT FOR US
 .template-for-us {
+  .after-header-deco {
+    @include media-breakpoint-up(lg) {
+      height: 400px;
+    }
+    @include media-breakpoint-up(xl) {
+      height: 450px;
+    }
+  }
   .certificate {
     position: relative;
 
@@ -132,14 +144,12 @@
       transition: all 10s ease-in-out;
 
       position: absolute;
-      left: -50%;
-      right: -150%;
-      width: 400%;
+      left: 0;
+      width: 100%;
       height: 50%;
-      left: -150%;
-      right: -50%;
+      right: 0;
       z-index: 0;
-      background-color: #FFF;
+      // background-color: #FFF;
     }
     &:before {
       top: 25%;
@@ -149,16 +159,17 @@
     }
 
     &:hover {
-      -webkit-transition: all 10s ease-in-out; /* Safari */
-      transition: all 10s ease-in-out;
+      -webkit-transition: all 15s ease-in-out; /* Safari */
+      transition: all 15s ease-in-out;
 
       &:before {
+        @extend .shadow;
         // background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(13, 53, 92, 0.1) 50%);
-        background-color: #F5F8FE;
+        // background-color: #F5F8FE;
       }
       &:after {
         // background: linear-gradient(180deg, rgba(13, 53, 92, 0.1) 0%, rgba(255, 255, 255, 0) 50%);
-        background-color: #F5F8FE;
+        // background-color: #F5F8FE;
       }
     }
   }
@@ -168,6 +179,9 @@
 // SERVICES
 .template-services {
   .after-header-deco {
+    @include media-breakpoint-up(xl) {
+      height: 550px;
+    }
     @include media-breakpoint-up(xxxl) {
       height: 650px;
     }
@@ -193,23 +207,113 @@
     font-size: 34px;
     font-weight: 400;
   }
+  img.service-image {
+    @include media-breakpoint-only(md) {
+      position: sticky;
+      top: 30px;
+    }
+  }
 }
 
 // EQUIPMENT
 .template-equipment {
+  .equipment-margin {
+    @include media-breakpoint-only(md) {
+      margin-top: 90px !important;
+    }
+    @include media-breakpoint-up(lg) {
+      margin-top: 150px !important;
+    }
+  }
+  img.service-image {
+    @include media-breakpoint-only(md) {
+      position: sticky;
+      top: 30px;
+    }
+  }
 }
 
 // PROJECTS
 .template-projects {
-  @include media-breakpoint-up(xxxl) {
-    height: 550px;
+  .after-header-deco {
+    @include media-breakpoint-up(xxxl) {
+      height: 550px;
+    }
+  }
+  figure {
+    &:hover {
+      .see_more_images {
+        opacity: 1;
+      }
+    }
+    .see_more_images {
+      cursor: pointer;
+      opacity: 0;
+      @extend .position-absolute;
+      z-index: 9;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      @extend .w-100;
+      border-radius: 9px;
+      background-color: rgba(22, 53, 84, 0.86);
+
+      &:before,
+      &:after {
+        content: '';
+        @extend .position-absolute;
+        display: block;
+      }
+      &:before {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 52%;
+        background-image: url('../images/search.svg');
+        background-repeat: no-repeat;
+        background-size: 72px;
+        background-position: bottom center;
+      }
+
+      @include media-breakpoint-down(xs) {
+        &:before {
+          background-size: 52px;
+        }
+        &.opacity1 {
+          opacity: 1 !important;
+        }
+        span {
+          font-size: 14px;
+        }
+      }
+
+      span {
+        @extend .position-absolute;
+        top: 55%;
+        left: 0;
+        width: 100%;
+        @extend .text-center;
+        color: $white;
+      }
+    }
   }
 }
 
 
 // CLIENTS
 .template-clients {
-  // 
+  .after-header-deco {
+    @include media-breakpoint-up(lg) {
+      height: 350px;
+    }
+    @include media-breakpoint-up(xl) {
+      height: 400px;
+    }
+  }
+  .see_more_images {
+    @extend .d-none;
+  }
 }
 
 // PROJECTS
@@ -222,24 +326,24 @@
       @include media-breakpoint-down(sm) {
         margin: 0 -10px 0 -15px;
       }
-
-      ul {
-        // animation: sticky-collapse 1s 1;
+      @include media-breakpoint-only(md) {
+        margin: 0 -40px;
+      }
+      @include media-breakpoint-up(lg) {
+        ul {
+          height: 75px;
+          animation: sticky-collapse 1s 1;
+        }
       }
     }
-    
-    @extend .position-relative;
-    @media (max-width: 575.98px) {
-      position: sticky;
-    }
-    
-    top: 0;
-    z-index: 9;
 
-    &:before {
+    &:before,
+    &:after {
       content: '';
       display: block;
       position: absolute;
+    }
+    &:before {
       left: 15%;
       bottom: 0;
       width: 70%;
@@ -247,14 +351,10 @@
       box-shadow: 0 0 80px rgba(0, 0, 0, 0.1);
     }
     &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
       left: 0;
       bottom: 0;
       width: 100%;
-      height: 100%;
+      height: 150%;
       background-color: #fff;
     }
 
@@ -281,6 +381,47 @@
           &.active {
             color: #232F3E;
             border-bottom: 3px solid #055FBA !important;
+          }
+        }
+      }
+    }
+  }
+  figure {
+    @extend .position-relative;
+    @include media-breakpoint-down(xs) {
+      overflow: hidden;
+    }
+    a {
+      @extend .position-relative;
+      z-index: 3;
+      @extend .d-block;
+
+      + a {
+        @extend .position-absolute;
+        z-index: 1;
+        width: auto !important;
+      }
+
+      + a {
+        top: 20px;
+        right: -15px;
+        height: 90% !important;
+        // @extend .shadow;
+        + a {
+          top: 35px;
+          right: -30px;
+          height: 80% !important;
+          + a {
+            z-index: 1;
+            top: 40px;
+            right: -40px;
+            height: 70% !important;
+            + a {
+              z-index: 1;
+              top: 55px;
+              right: -50px;
+              height: 60% !important;
+            }
           }
         }
       }

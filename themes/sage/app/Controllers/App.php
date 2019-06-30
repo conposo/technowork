@@ -6,6 +6,8 @@ use Sober\Controller\Controller;
 
 class App extends Controller
 {
+    use partials\mobiledetect;
+
     public function siteName()
     {
         return get_bloginfo('name');

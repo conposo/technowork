@@ -2,6 +2,13 @@
 <html {!! get_language_attributes() !!}>
   @include('partials.head')
   <body @php body_class() @endphp>
+
+    <div class="loading">
+      <span class="pulse">
+        <img src="@asset('/images/large_gears.gif')">
+      </span>
+    </div>
+
     <div class="bg-white w-100 position-fixed" style="top:0;bottom:0;z-index: -1;"></div>
     @php do_action('get_header') @endphp
     @include('partials.header')
@@ -20,12 +27,6 @@
     @php do_action('get_footer') @endphp
     @include('partials.footer')
     @php wp_footer() @endphp
-    
-    <div class="loading">
-      <span class="pulse">
-        <img src="@asset('/images/technowork-logo.png')" alt="">
-      </span>
-    </div>
 
   </body>
 </html>

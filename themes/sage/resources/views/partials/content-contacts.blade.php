@@ -2,7 +2,7 @@
 <div class="mt-5 py-5 container">
 
   <div class="mb-sm-5 row">
-    <div class="col-sm-4 mb-5">
+    <div class="col-md-4 mb-5">
       <h2 class="text-left text-uppercase font-weight-light">{{$title_phone}}</h2>
       <div class="mb-3 h-75 d-flex align-items-center pt-sm-2 mx-auto _shadow">
         <div class="d-flex justify-content-center flex-column">
@@ -14,7 +14,7 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-4 mb-5">
+    <div class="col-md-4 mb-5">
       <h2 class="text-left text-uppercase font-weight-light">{{$title_email}}</h2>
       <div class="mb-3 h-75 d-flex align-items-center pt-sm-2 mx-auto _shadow">
         <div class="d-flex justify-content-center flex-column">
@@ -25,7 +25,7 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-4 mb-5">
+    <div class="col-md-4 mb-5">
       <h2 class="text-left text-uppercase font-weight-light">{{$title_place}}</h2>
       <div class="mb-3 h-75 d-flex align-items-center pt-sm-2 mx-auto _shadow">
         <div class="d-flex justify-content-center flex-column">

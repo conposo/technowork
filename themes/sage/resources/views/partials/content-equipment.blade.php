@@ -1,8 +1,8 @@
 
 @if( $section )
-
+    <div class="equipment-margin"></div>
     @while( have_rows('section') ) @php the_row(); @endphp
-        <div class="bg-white my-5 my-sm-5 py-sm-5 d-flex flex-column align-items-center">
+        <div class="bg-white my-4 my-lg-5 py-lg-5 d-flex flex-column align-items-center">
 
             <div class="mb-3 mb-sm-5 col text-center">
                 @if(get_sub_field('title'))
@@ -24,8 +24,8 @@
                 <div class="pt-3 mb-5 row d-flex _align-items-center">
 
                     @if( $_image = get_sub_field('image') )
-                        <figure class="col-sm-5">
-                            {!! wp_get_attachment_image( $_image, 'full', '', ['class' => 'rounded-lg shadow w-100 h-auto'] ) !!}
+                        <figure class="m-0 col-sm-5">
+                            {!! wp_get_attachment_image( $_image, 'full', '', ['class' => 'service-image rounded-lg shadow w-100 h-auto'] ) !!}
                         </figure>
                     @endif
                     <div class="col-sm-7">

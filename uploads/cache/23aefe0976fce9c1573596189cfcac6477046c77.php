@@ -9,8 +9,8 @@
     <?php while( have_rows('section', 'option') ): ?> <?php the_row(); ?>
 
       <div class="row d-flex">
-        <div class="col-lg-8 <?php if(!wp_is_mobile()): ?> <?php if($counter == 2): ?> ml-auto text-right <?php else: ?>  <?php endif; ?> <?php else: ?> mb-5 <?php endif; ?>">
-          <h2 class="<?php if(!wp_is_mobile()): ?> <?php if($counter == 2): ?> text-right <?php else: ?> text-left <?php endif; ?> <?php else: ?> text-left <?php endif; ?>"><?php echo e(get_sub_field('title')); ?></h2>
+        <div class="col-lg-8 <?php if(!wp_is_mobile() || App::detect()->isTablet()): ?> <?php if($counter == 2): ?> ml-auto text-right <?php else: ?>  <?php endif; ?> <?php else: ?> mb-5 <?php endif; ?>">
+          <h2 class="<?php if(!wp_is_mobile() || App::detect()->isTablet()): ?> <?php if($counter == 2): ?> text-right <?php else: ?> text-left <?php endif; ?> <?php else: ?> text-left <?php endif; ?>"><?php echo e(get_sub_field('title')); ?></h2>
           <p>
             <?php echo get_sub_field('text'); ?>
 

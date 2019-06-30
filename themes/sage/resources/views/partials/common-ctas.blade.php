@@ -9,8 +9,8 @@
     @while( have_rows('section', 'option') ) @php the_row(); @endphp
 
       <div class="row d-flex">
-        <div class="col-lg-8 @if(!wp_is_mobile()) @if($counter == 2) ml-auto text-right @else  @endif @else mb-5 @endif">
-          <h2 class="@if(!wp_is_mobile()) @if($counter == 2) text-right @else text-left @endif @else text-left @endif">{{get_sub_field('title')}}</h2>
+        <div class="col-lg-8 @if(!wp_is_mobile() || App::detect()->isTablet()) @if($counter == 2) ml-auto text-right @else  @endif @else mb-5 @endif">
+          <h2 class="@if(!wp_is_mobile() || App::detect()->isTablet()) @if($counter == 2) text-right @else text-left @endif @else text-left @endif">{{get_sub_field('title')}}</h2>
           <p>
             {!!get_sub_field('text')!!}
           </p>

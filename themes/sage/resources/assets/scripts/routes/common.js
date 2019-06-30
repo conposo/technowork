@@ -29,37 +29,28 @@ export default {
     if( ! $('body').hasClass('home') ) {
       var h1_text = $('h1').text();
       var modified_heading_text = h1_text.split(' ');
-      console.log(modified_heading_text);
       if(modified_heading_text) {
         var new_modified_heading_text = `<span>${modified_heading_text[0]}</span> ${modified_heading_text[modified_heading_text.length-1].capitalize()}`;
         $('h1').html(new_modified_heading_text);
       }
     }
-
-    function log(txt) {
-      console.log('location : <b>' + txt + '</b> px')
-    }
     
-    if(window.innerWidth < 768) {
-      console.log(window.innerWidth < 768);
-
+    // if(true || window.innerWidth < 768) {
       $(function() {
         var eTop = $('.position-sticky, .tabs').offset().top; //get the offset top of the element
-        // log(eTop - $(window).scrollTop()); //position of the ele w.r.t window
 
         $(window).scroll(function() { //when window is scrolled
-            log(eTop - $(window).scrollTop());
             if( (eTop - $(window).scrollTop()) < -15 ) {
-              // $('.tabs > ul').removeClass('py-5');
+              // $('.tabs > ul').removeClass('pb-sm-5');
               $('.tabs').addClass('sticky-collapse');
             }
             if( (eTop - $(window).scrollTop()) > 15 ) {
-              // $('.tabs > ul').addClass('py-5');
+              // $('.tabs > ul').addClass('pb-sm-5');
               $('.tabs').removeClass('sticky-collapse');
             }
         });
       });
-    }
+    // }
 
     
   },

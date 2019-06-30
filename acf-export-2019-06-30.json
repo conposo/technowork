@@ -1268,6 +1268,56 @@
         "description": ""
     },
     {
+        "key": "group_5d1855b84c0d8",
+        "title": "Project Gallery",
+        "fields": [
+            {
+                "key": "field_5d1855ca07f24",
+                "label": "Gallery",
+                "name": "gallery",
+                "type": "gallery",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "medium",
+                "insert": "append",
+                "library": "all",
+                "min": "",
+                "max": "",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "projects"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
         "key": "group_5d00a0281c1dd",
         "title": "Services (page)",
         "fields": [
@@ -1394,7 +1444,7 @@
                         "key": "field_5d00a0b1d2680",
                         "label": "Text",
                         "name": "text",
-                        "type": "text",
+                        "type": "wysiwyg",
                         "instructions": "",
                         "required": 0,
                         "conditional_logic": 0,
@@ -1404,10 +1454,10 @@
                             "id": ""
                         },
                         "default_value": "",
-                        "placeholder": "",
-                        "prepend": "",
-                        "append": "",
-                        "maxlength": ""
+                        "tabs": "all",
+                        "toolbar": "full",
+                        "media_upload": 1,
+                        "delay": 0
                     },
                     {
                         "key": "field_5d00a0b8d2681",
@@ -1432,6 +1482,21 @@
                         "max_height": "",
                         "max_size": "",
                         "mime_types": ""
+                    },
+                    {
+                        "key": "field_5d18a4d8ba9f0",
+                        "label": "Link",
+                        "name": "link",
+                        "type": "link",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "url"
                     }
                 ]
             }

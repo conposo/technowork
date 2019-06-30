@@ -5,7 +5,7 @@
       @php $counter = 1; @endphp
 
     @while ( have_rows('presentation') ) @php the_row(); @endphp
-      <div class="my-3 my-sm-5 py-3 py-sm-5 row d-flex _align-items-center @if($counter == 2) flex-row-reverse @endif">
+      <div class="my-3 my-lg-5 py-3 py-lg-5 row d-flex _align-items-center @if($counter == 2) flex-row-reverse @endif">
 
         <div class="col-lg-5 col-xl-4 mb-3 mb-sm-5 mb-lg-0">
           <div>
@@ -37,7 +37,7 @@
         <p>{{$text}}</p>
       </div>
     </div>
-    <div class="col-sm-5 _pr-5">
+    <div class="col-8 mx-auto col-sm-5 _pr-5">
     @if( $image )
       {!! wp_get_attachment_image( $image, 'full', '', ['class' => 'shadow w-100 h-auto'] ) !!}
     @endif
