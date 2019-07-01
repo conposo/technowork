@@ -34,7 +34,7 @@
               global $post;
 
               $gallery_images = get_field('gallery', get_the_ID());
-              $counter = count($gallery_images);
+              ($gallery_images) ? $counter = count($gallery_images) : $counter = 0 ;
               @endphp
               <div id="{{$post->post_name}}" class="mb-5 pb-5" style="_height: 50vh;">
                 <div class="row">
