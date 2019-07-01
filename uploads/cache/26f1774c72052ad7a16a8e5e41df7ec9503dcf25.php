@@ -16,9 +16,9 @@
   <div class="position-relative container d-flex flex-column flex-sm-row justify-content-between align-items-center">
     <?php dynamic_sidebar('sidebar-footer') ?>
     <div class="__w-25 mb-3 mb-sm-0 d-flex justify-content-center justify-content-sm-start">
-      <span class="brand d-block">
+      <a href="<?php echo e(home_url('/')); ?>" class="brand d-block">
         <img src="<?= App\asset_path('images/TechnoworkLogo.png'); ?>" alt="TechnoWork Official Logo">
-      </span>
+      </a>
     </div>
     <nav class="nav-footer mb-3 mb-sm-0">
       <?php if(has_nav_menu('primary_footer')): ?>

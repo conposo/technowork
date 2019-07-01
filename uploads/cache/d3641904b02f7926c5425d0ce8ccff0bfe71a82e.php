@@ -5,7 +5,7 @@
 
     <div class="loading">
       <span class="pulse">
-        <img src="<?= App\asset_path('/images/large_gears.gif'); ?>">
+        <img src="<?= App\asset_path('images/large_gears.gif'); ?>">
       </span>
     </div>
 

@@ -37,7 +37,10 @@
             <div>
               <h3>{{$gps_coords->label_gps_coords}}</h3>
               <span class="d-block">{{$gps_coords->gps_coords_long}}, {{$gps_coords->gps_coords_lat}}</span>
-              <a href="{{$gps_coords->gps_coords_cta}}" class="see-on-map">виж в Google Maps</a>
+              <a href="{{$gps_coords->gps_coords_cta}}" class="see-on-map">
+                <img src="@asset('images/google_map.png')" alt="">  
+                виж в Google Maps
+              </a>
             </div>
           @endif
           <p class="m-0 pl-0 pr-5 btn-sm font-weight-light">{{$description_place}}</p>

@@ -35,23 +35,17 @@ export default {
       }
     }
     
-    // if(true || window.innerWidth < 768) {
-      $(function() {
-        var eTop = $('.position-sticky, .tabs').offset().top; //get the offset top of the element
-
-        $(window).scroll(function() { //when window is scrolled
-            if( (eTop - $(window).scrollTop()) < -15 ) {
-              // $('.tabs > ul').removeClass('pb-sm-5');
-              $('.tabs').addClass('sticky-collapse');
-            }
-            if( (eTop - $(window).scrollTop()) > 15 ) {
-              // $('.tabs > ul').addClass('pb-sm-5');
-              $('.tabs').removeClass('sticky-collapse');
-            }
-        });
-      });
-    // }
-
+    $(window).scroll(function() {
+        var eTop = $('.tabs').offset().top;
+        if( (eTop - $(window).scrollTop()) < 10 ) {
+          $('.tabs').addClass('sticky-collapse');
+          this.console.log('< 0', eTop - $(window).scrollTop());
+        }
+        if( (eTop - $(window).scrollTop()) > 10 ) {
+          $('.tabs').removeClass('sticky-collapse');
+          this.console.log('> 0', eTop - $(window).scrollTop());
+        }
+    });
     
   },
 };

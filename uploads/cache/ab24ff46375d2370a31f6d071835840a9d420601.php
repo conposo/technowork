@@ -25,7 +25,7 @@
                 <div class="pt-3 mb-5 row d-flex _align-items-center">
 
                     <?php if( $_image = get_sub_field('image') ): ?>
-                        <figure class="m-0 col-sm-5">
+                        <figure class="mb-3 m-xs-0 col-sm-5">
                             <?php echo wp_get_attachment_image( $_image, 'full', '', ['class' => 'service-image rounded-lg shadow w-100 h-auto'] ); ?>
 
                         </figure>

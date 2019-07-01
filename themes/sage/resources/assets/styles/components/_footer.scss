@@ -5,7 +5,6 @@ body > header {
   z-index: 1;
   background-color: $background-primary-color-light;
 
-  span.brand,
   a.brand {
     width: 55px;
     @include media-breakpoint-up(sm) {
@@ -31,10 +30,6 @@ body > header {
     li {
       @extend .mx-2;
       @extend .mx-sm-4;
-
-      @include media-breakpoint-up(sm) {
-        // 
-      }
     }
 
     a {
@@ -45,14 +40,8 @@ body > header {
       @include media-breakpoint-up(sm) {
         font-size: 16px;
       }
-      @include media-breakpoint-up(md) {
-        // 
-      }
       @include media-breakpoint-up(lg) {
         width: 85px;
-      }
-      @include media-breakpoint-up(xl) {
-        // 
       }
     }
   }
@@ -71,29 +60,16 @@ body > footer {
     z-index: 3;
     top: 0;
     bottom: 10px;
+    width: 130px;
     border-bottom: 3px solid $brand-primary-color;
     background-color: $background-primary-color-light;
   }
   &:before {
     left: 5px;
-    width: 130px;
     border-left: 3px solid $brand-primary-color;
   }
   &:after {
     right: 5px;
-    width: 130px;
     border-right: 3px solid $brand-primary-color;
-  }
-  @include media-breakpoint-down(xs) {
-    &:after {
-      content: '';
-    }
-    &:after {
-        right: 0;
-        bottom: 0;
-        width: 30px;
-        border-right: 5px solid $brand-primary-color;
-        border-bottom: none;
-    }
   }
 }
