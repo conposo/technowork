@@ -48,11 +48,11 @@ if( function_exists('acf_add_options_page') ) {
 		'parent_slug'	=> 'theme-general-settings',
 	));	
 
-    acf_add_options_sub_page(array(
-		'page_title' 	=> 'Home Page Settings',
-		'menu_title'	=> 'Home Page',
-		'parent_slug'	=> 'theme-general-settings',
-	));	
+    // acf_add_options_sub_page(array(
+	// 	'page_title' 	=> 'Home Page Settings',
+	// 	'menu_title'	=> 'Home Page',
+	// 	'parent_slug'	=> 'theme-general-settings',
+	// ));	
 }
 
 /**

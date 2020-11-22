@@ -34,6 +34,7 @@
     </div>
   </div>
   <div class="copy text-center">
-    © <?php echo e(date('Y')); ?> Technowork All Rights Reserved
+    © <?php echo e(date('Y')); ?> <?php echo e(get_field('footer_copy_text', 'option')); ?>
+
   </div>
 </footer>

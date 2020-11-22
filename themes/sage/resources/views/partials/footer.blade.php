@@ -32,6 +32,6 @@
     </div>
   </div>
   <div class="copy text-center">
-    © {{date('Y')}} Technowork All Rights Reserved
+    © {{date('Y')}} {{get_field('footer_copy_text', 'option')}}
   </div>
 </footer>
